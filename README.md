@@ -2,6 +2,11 @@
 
 An enterprise-grade desktop application designed for secure, efficient, and scalable workforce management. This system utilizes a monolithic architecture with a strict Separation of Concerns (SoC), isolating database operations from the frontend rendering logic.
 
+---
+**Author:** Karandeep Singh
+*B.Tech AI & ML, CGC University*
+*GitHub:* [karan0dev](https://github.com/karan0dev)
+
 ## ⚙️ Core Architecture & Tech Stack
 
 * **Frontend:** JavaFX (Modern Hub-and-Spoke UI layout, Custom CSS)
