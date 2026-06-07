@@ -12,6 +12,16 @@
           <include>**/*.css</include>
         </includes>
       </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.png</include>
+          <include>**/*.jpg</include>
+          <include>**/*.jpeg</include>
+          <include>**/*.gif</include>
+          <include>**/*.ico</include>
+        </includes>
+      </resource>
     </resources>
     <plugins>
       <plugin>
