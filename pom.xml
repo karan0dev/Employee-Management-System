@@ -29,10 +29,22 @@
 
     <build>
         <resources>
+            <!-- CSS files from source folder (for modern-theme.css) -->
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
                     <include>**/*.css</include>
+                </includes>
+            </resource>
+            <!-- Images and other assets from resources folder -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.png</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.jpeg</include>
+                    <include>**/*.gif</include>
+                    <include>**/*.ico</include>
                 </includes>
             </resource>
         </resources>

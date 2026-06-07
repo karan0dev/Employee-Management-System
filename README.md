@@ -27,7 +27,7 @@ An enterprise-grade desktop application designed for secure, efficient, and scal
 ### Database Configuration
 1. Open MySQL Workbench.
 2. Execute the provided SQL schema script to generate the `employee_management` database, the `employees` table, and the default admin credentials.
-3. Update the `DatabaseConnection.java` utility file with your local MySQL root password.
+3. Update the `DBConnection.java` utility file with your local MySQL root password.
 
 ### Compilation & Execution
 To compile the raw code into a standalone executable, run the following Maven command in the project root:

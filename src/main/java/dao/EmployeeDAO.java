@@ -1,20 +1,21 @@
 package dao;
 
-import model.Employee;
-import utils.DatabaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.Employee;
+import utils.DBConnection;
 
 public class EmployeeDAO {
     
     public boolean addEmployee(Employee emp) {
         String query = "INSERT INTO employees (emp_id, name, fname, dob, salary, address, phone, email, education, designation, aadhar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             
             pstmt.setString(1, emp.getEmpId());
@@ -40,7 +41,7 @@ public class EmployeeDAO {
         List<Employee> employeeList = new ArrayList<>();
         String query = "SELECT * FROM employees";
         
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query);
              ResultSet rs = pstmt.executeQuery()) {
             
@@ -61,7 +62,7 @@ public class EmployeeDAO {
 
     public boolean deleteEmployee(String empId) {
         String query = "DELETE FROM employees WHERE emp_id = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             pstmt.setString(1, empId);
             return pstmt.executeUpdate() > 0;
@@ -74,7 +75,7 @@ public class EmployeeDAO {
     // NEW METHOD: Update an existing employee
     public boolean updateEmployee(Employee emp) {
         String query = "UPDATE employees SET name=?, fname=?, dob=?, salary=?, address=?, phone=?, email=?, education=?, designation=?, aadhar=? WHERE emp_id=?";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(query)) {
             
             pstmt.setString(1, emp.getName());
